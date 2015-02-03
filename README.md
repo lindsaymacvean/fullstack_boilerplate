@@ -2,7 +2,12 @@
 Express fullstack web app boilerplate
 
 ## How to install
-Make sure to have Node && npm, bower, and Grunt installed
+Make sure to have installed:
+
+* Node && npm
+* Bower
+* Grunt
+* Heroku Toolbelt (including foreman)
 
 ``` 
 npm install && bower install
