@@ -20,8 +20,16 @@ foreman start
 /client holds all client side jade templates
 
 /server holds all server side node files
-	
-	/
+
+Using a MOVE structure
+
+Models - Typical
+
+Operations - Handling all controller like behaviour with the DB etc
+
+Views - Classic views are in the ../client directory. The server directory handles APIs
+
+Events - Bubbling up from the client side through the routes and endpoints and to the operations.
 
 ## To Dos
 Setup io emitting for default operations
