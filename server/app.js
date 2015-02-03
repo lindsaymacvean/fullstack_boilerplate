@@ -8,13 +8,13 @@ var app = express();
 var http = require('http').Server(app);
 //Set up socket.io server & export as an app.publicMethod
 var io = module.exports.io = require('socket.io')(http);
-//Time Formatter exported so Jade an access
+//Time Formatter exported so Jade can access
 app.locals.moment = require('moment');
 
 //Setup DB
 mongoose.connect(config.mongoURL);
 //On process end kill all DB connections
-processon('SIGINT', function () {
+process.on('SIGINT', function () {
 	mongoose.connection.close(function () {
 		console.log('Mongoose disconnected');
 		process.exit(0);
@@ -34,6 +34,7 @@ var routes = require('./routes')(app, models, io, operations);
 //Fire it up
 var port = process.env.PORT || config.port;
 http.listen(port, function() {
+	console.log('Started on port '+port);
 	//Start any operations that need to wait for the server to start
-	operations.start();
+	//operations.start();
 });

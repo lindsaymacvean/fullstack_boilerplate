@@ -1,5 +1,5 @@
-var mongoose = requie('mongoose');
-var Scema = mongoose.Schema;
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 var defaultSchema = new Schema({
 	string: {
 		type:String, 

@@ -5,21 +5,22 @@ var jade = require('jade');
 var bodyParser = require('body-parser');
 var express = require('express');
 
-module.exports = function (app, models, io, operations) {
+module.exports = function(app, models, io, operations) {
 	//set template engine
 	app.set('view engine', 'jade');
 
 	//Set up middleware
-	app.use(favicon(__dirname+'/..client/public/imgs/favicon.ico'));
+	app.use(favicon(__dirname+'/../client/public/imgs/favicon.ico'));
 	app.use(bodyParser.urlencoded({extended:true}));
 	app.use(bodyParser.json());
 	app.use(methodOverride());
 
 	//set the client directory for client side views
-	app.use('/', express.static(__dirname+'/../client/public/imgs/favicon.ico'));
+	app.use('/', express.static(__dirname+'/../client/views'));
 	app.use('/public', express.static(__dirname+'/../client/public'));
-	app.use('views', __dirname+'/../client/views');
 
+	app.set('views', __dirname+'/../client/views');
+	
 	//main views handler
 	app.route('/')
 		.get(function(req,res) {
