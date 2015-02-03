@@ -2,9 +2,12 @@
 Express fullstack web app boilerplate
 
 ## How to install
-Make sure to have Node && npm installed
+Make sure to have Node && npm, bower, and Grunt installed
 
-``` stuff
+``` 
+npm install && bower install
+foreman start
+```
 
 ## Structure
 /dist compiled files using grunt
