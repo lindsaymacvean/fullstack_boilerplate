@@ -1,0 +1,27 @@
+{
+  "name": "boilerplate",
+  "version": "0.0.0",
+  "homepage": "https://github.com/lindaymacvean/fullstack_boilerplate",
+  "authors": [
+    "Lindsay <lindsaymacvean@gmail.com>"
+  ],
+  "description": "Boilerplate Web App",
+  "main": "client/views/layout.jade",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "Bowers",
+    "Jade",
+    "CSS"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
