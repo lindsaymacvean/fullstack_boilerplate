@@ -11,8 +11,11 @@ foreman start
 
 ## Structure
 /dist compiled files using grunt
+
 /client holds all client side jade templates
+
 /server holds all server side node files
+	
 	/
 
 ## To Dos
