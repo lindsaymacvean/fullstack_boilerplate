@@ -25,4 +25,15 @@ processon('SIGINT', function () {
 var models = module.exports.models = {};
 models.Default = require('./models/default');
 
+//Setup Operations
+var operations = require('./controller')(app, models, io);
 
+//Set up routes
+var routes = require('./routes')(app, models, io, operations);
+
+//Fire it up
+var port = process.env.PORT || config.port;
+http.listen(port, function() {
+	//Start any operations that need to wait for the server to start
+	operations.start();
+});
