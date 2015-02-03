@@ -1,4 +1,4 @@
-# fullstack_boilerplate
+# Fullstack web app Boilerplate
 Express fullstack web app boilerplate
 
 ## How to install
@@ -21,7 +21,7 @@ foreman start
 
 /server holds all server side node files
 
-Using a MOVE structure
+**Using a MOVE structure**
 
 Models - Typical
 
