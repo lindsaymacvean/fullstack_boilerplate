@@ -1,0 +1,426 @@
+extends ./layout
+
+block content
+  #page-wrapper
+    .container-fluid
+      // Page Heading
+      .row
+        .col-lg-12
+          h1.page-header
+            | Tables
+          |                         
+          ol.breadcrumb
+            li
+              i.fa.fa-dashboard
+              |   
+              a(href='index.html') Dashboard
+            |                             
+            li.active
+              i.fa.fa-table
+              |  Tables
+      // /.row
+      .row
+        .col-lg-6
+          h2 Bordered Table
+          |                         
+          .table-responsive
+            table.table.table-bordered.table-hover
+              thead
+                tr
+                  th Page
+                  |                                         
+                  th Visits
+                  |                                         
+                  th % New Visits
+                  |                                         
+                  th Revenue
+              |                                 
+              tbody
+                tr
+                  td /index.html
+                  |                                         
+                  td 1265
+                  |                                         
+                  td 32.3%
+                  |                                         
+                  td $321.33
+                |                                     
+                tr
+                  td /about.html
+                  |                                         
+                  td 261
+                  |                                         
+                  td 33.3%
+                  |                                         
+                  td $234.12
+                |                                     
+                tr
+                  td /sales.html
+                  |                                         
+                  td 665
+                  |                                         
+                  td 21.3%
+                  |                                         
+                  td $16.34
+                |                                     
+                tr
+                  td /blog.html
+                  |                                         
+                  td 9516
+                  |                                         
+                  td 89.3%
+                  |                                         
+                  td $1644.43
+                |                                     
+                tr
+                  td /404.html
+                  |                                         
+                  td 23
+                  |                                         
+                  td 34.3%
+                  |                                         
+                  td $23.52
+                |                                     
+                tr
+                  td /services.html
+                  |                                         
+                  td 421
+                  |                                         
+                  td 60.3%
+                  |                                         
+                  td $724.32
+                |                                     
+                tr
+                  td /blog/post.html
+                  |                                         
+                  td 1233
+                  |                                         
+                  td 93.2%
+                  |                                         
+                  td $126.34
+        |                     
+        .col-lg-6
+          h2 Bordered with Striped Rows
+          |                         
+          .table-responsive
+            table.table.table-bordered.table-hover.table-striped
+              thead
+                tr
+                  th Page
+                  |                                         
+                  th Visits
+                  |                                         
+                  th % New Visits
+                  |                                         
+                  th Revenue
+              |                                 
+              tbody
+                tr
+                  td /index.html
+                  |                                         
+                  td 1265
+                  |                                         
+                  td 32.3%
+                  |                                         
+                  td $321.33
+                |                                     
+                tr
+                  td /about.html
+                  |                                         
+                  td 261
+                  |                                         
+                  td 33.3%
+                  |                                         
+                  td $234.12
+                |                                     
+                tr
+                  td /sales.html
+                  |                                         
+                  td 665
+                  |                                         
+                  td 21.3%
+                  |                                         
+                  td $16.34
+                |                                     
+                tr
+                  td /blog.html
+                  |                                         
+                  td 9516
+                  |                                         
+                  td 89.3%
+                  |                                         
+                  td $1644.43
+                |                                     
+                tr
+                  td /404.html
+                  |                                         
+                  td 23
+                  |                                         
+                  td 34.3%
+                  |                                         
+                  td $23.52
+                |                                     
+                tr
+                  td /services.html
+                  |                                         
+                  td 421
+                  |                                         
+                  td 60.3%
+                  |                                         
+                  td $724.32
+                |                                     
+                tr
+                  td /blog/post.html
+                  |                                         
+                  td 1233
+                  |                                         
+                  td 93.2%
+                  |                                         
+                  td $126.34
+      // /.row
+      .row
+        .col-lg-6
+          h2 Basic Table
+          |                         
+          .table-responsive
+            table.table.table-hover
+              thead
+                tr
+                  th Page
+                  |                                         
+                  th Visits
+                  |                                         
+                  th % New Visits
+                  |                                         
+                  th Revenue
+              |                                 
+              tbody
+                tr
+                  td /index.html
+                  |                                         
+                  td 1265
+                  |                                         
+                  td 32.3%
+                  |                                         
+                  td $321.33
+                |                                     
+                tr
+                  td /about.html
+                  |                                         
+                  td 261
+                  |                                         
+                  td 33.3%
+                  |                                         
+                  td $234.12
+                |                                     
+                tr
+                  td /sales.html
+                  |                                         
+                  td 665
+                  |                                         
+                  td 21.3%
+                  |                                         
+                  td $16.34
+                |                                     
+                tr
+                  td /blog.html
+                  |                                         
+                  td 9516
+                  |                                         
+                  td 89.3%
+                  |                                         
+                  td $1644.43
+                |                                     
+                tr
+                  td /404.html
+                  |                                         
+                  td 23
+                  |                                         
+                  td 34.3%
+                  |                                         
+                  td $23.52
+                |                                     
+                tr
+                  td /services.html
+                  |                                         
+                  td 421
+                  |                                         
+                  td 60.3%
+                  |                                         
+                  td $724.32
+                |                                     
+                tr
+                  td /blog/post.html
+                  |                                         
+                  td 1233
+                  |                                         
+                  td 93.2%
+                  |                                         
+                  td $126.34
+        |                     
+        .col-lg-6
+          h2 Striped Rows
+          |                         
+          .table-responsive
+            table.table.table-hover.table-striped
+              thead
+                tr
+                  th Page
+                  |                                         
+                  th Visits
+                  |                                         
+                  th % New Visits
+                  |                                         
+                  th Revenue
+              |                                 
+              tbody
+                tr
+                  td /index.html
+                  |                                         
+                  td 1265
+                  |                                         
+                  td 32.3%
+                  |                                         
+                  td $321.33
+                |                                     
+                tr
+                  td /about.html
+                  |                                         
+                  td 261
+                  |                                         
+                  td 33.3%
+                  |                                         
+                  td $234.12
+                |                                     
+                tr
+                  td /sales.html
+                  |                                         
+                  td 665
+                  |                                         
+                  td 21.3%
+                  |                                         
+                  td $16.34
+                |                                     
+                tr
+                  td /blog.html
+                  |                                         
+                  td 9516
+                  |                                         
+                  td 89.3%
+                  |                                         
+                  td $1644.43
+                |                                     
+                tr
+                  td /404.html
+                  |                                         
+                  td 23
+                  |                                         
+                  td 34.3%
+                  |                                         
+                  td $23.52
+                |                                     
+                tr
+                  td /services.html
+                  |                                         
+                  td 421
+                  |                                         
+                  td 60.3%
+                  |                                         
+                  td $724.32
+                |                                     
+                tr
+                  td /blog/post.html
+                  |                                         
+                  td 1233
+                  |                                         
+                  td 93.2%
+                  |                                         
+                  td $126.34
+      // /.row
+      .row
+        .col-lg-6
+          h2 Contextual Classes
+          |                         
+          .table-responsive
+            table.table.table-bordered.table-hover.table-striped
+              thead
+                tr
+                  th Page
+                  |                                         
+                  th Visits
+                  |                                         
+                  th % New Visits
+                  |                                         
+                  th Revenue
+              |                                 
+              tbody
+                tr.active
+                  td /index.html
+                  |                                         
+                  td 1265
+                  |                                         
+                  td 32.3%
+                  |                                         
+                  td $321.33
+                |                                     
+                tr.success
+                  td /about.html
+                  |                                         
+                  td 261
+                  |                                         
+                  td 33.3%
+                  |                                         
+                  td $234.12
+                |                                     
+                tr.warning
+                  td /sales.html
+                  |                                         
+                  td 665
+                  |                                         
+                  td 21.3%
+                  |                                         
+                  td $16.34
+                |                                     
+                tr.danger
+                  td /blog.html
+                  |                                         
+                  td 9516
+                  |                                         
+                  td 89.3%
+                  |                                         
+                  td $1644.43
+                |                                     
+                tr
+                  td /404.html
+                  |                                         
+                  td 23
+                  |                                         
+                  td 34.3%
+                  |                                         
+                  td $23.52
+                |                                     
+                tr
+                  td /services.html
+                  |                                         
+                  td 421
+                  |                                         
+                  td 60.3%
+                  |                                         
+                  td $724.32
+                |                                     
+                tr
+                  td /blog/post.html
+                  |                                         
+                  td 1233
+                  |                                         
+                  td 93.2%
+                  |                                         
+                  td $126.34
+        |                     
+        .col-lg-6
+          h2 Bootstrap Docs
+          |                         
+          p
+            | For complete documentation, please visit 
+            a(target='_blank', href='http://getbootstrap.com/css/#tables') Bootstrap&apos;s Tables Documentation
+            | .

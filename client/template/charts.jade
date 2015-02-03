@@ -1,0 +1,190 @@
+extends ./layout.jade
+
+block content         
+  #page-wrapper
+    .container-fluid
+      // Page Heading
+      .row
+        .col-lg-12
+          h1.page-header
+            | Charts
+          |                         
+          ol.breadcrumb
+            li
+              i.fa.fa-dashboard
+              |   
+              a(href='home') Dashboard
+            |                             
+            li.active
+              i.fa.fa-bar-chart-o
+              |  Charts
+      // /.row
+      // Flot Charts
+      .row
+        .col-lg-12
+          h2.page-header Flot Charts
+          |                         
+          p.lead
+            | Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features. For full usage instructions and documentation for Flot Charts, visit 
+            a(href='http://www.flotcharts.org/') http://www.flotcharts.org/
+            | .
+      // /.row
+      .row
+        .col-lg-12
+          .panel.panel-primary
+            .panel-heading
+              h3.panel-title
+                i.fa.fa-bar-chart-o
+                |  Line Graph Example with Tooltips
+            |                             
+            .panel-body
+              .flot-chart
+                #flot-line-chart.flot-chart-content
+      // /.row
+      .row
+        .col-lg-4
+          .panel.panel-green
+            .panel-heading
+              h3.panel-title
+                i.fa.fa-long-arrow-right
+                |  Pie Chart Example with Tooltips
+            |                             
+            .panel-body
+              .flot-chart
+                #flot-pie-chart.flot-chart-content
+              |                                 
+              .text-right
+                a(href='#')
+                  | View Details 
+                  i.fa.fa-arrow-circle-right
+        |                     
+        .col-lg-8
+          .panel.panel-yellow
+            .panel-heading
+              h3.panel-title
+                i.fa.fa-long-arrow-right
+                |  Multiple Axes Line Graph Example with Tooltips and Raw Data
+            |                             
+            .panel-body
+              .flot-chart
+                #flot-multiple-axes-chart.flot-chart-content
+              |                                 
+              .text-right
+                a(href='#')
+                  | View Details 
+                  i.fa.fa-arrow-circle-right
+      // /.row
+      .row
+        .col-lg-6
+          .panel.panel-red
+            .panel-heading
+              h3.panel-title
+                i.fa.fa-long-arrow-right
+                |  Moving Line Chart
+            |                             
+            .panel-body
+              .flot-chart
+                #flot-moving-line-chart.flot-chart-content
+              |                                 
+              .text-right
+                a(href='#')
+                  | View Details 
+                  i.fa.fa-arrow-circle-right
+        |                     
+        .col-lg-6
+          .panel.panel-primary
+            .panel-heading
+              h3.panel-title
+                i.fa.fa-long-arrow-right
+                |  Bar Graph with Tooltips
+            |                             
+            .panel-body
+              .flot-chart
+                #flot-bar-chart.flot-chart-content
+              |                                 
+              .text-right
+                a(href='#')
+                  | View Details 
+                  i.fa.fa-arrow-circle-right
+      // /.row
+      // Morris Charts
+      .row
+        .col-lg-12
+          h2.page-header Morris Charts
+          |                         
+          p.lead
+            | Morris.js is a very simple API for drawing line, bar, area and donut charts. For full usage instructions and documentation for Morris.js charts, visit 
+            a(href='http://www.oesmith.co.uk/morris.public/js/') http://www.oesmith.co.uk/morris.public/js/
+            | .
+      // /.row
+      .row
+        .col-lg-12
+          .panel.panel-green
+            .panel-heading
+              h3.panel-title
+                i.fa.fa-bar-chart-o
+                |  Area Line Graph Example with Tooltips
+            |                             
+            .panel-body
+              #morris-area-chart
+      // /.row
+      .row
+        .col-lg-4
+          .panel.panel-yellow
+            .panel-heading
+              h3.panel-title
+                i.fa.fa-long-arrow-right
+                |  Donut Chart Example
+            |                             
+            .panel-body
+              #morris-donut-chart
+              |                                 
+              .text-right
+                a(href='#')
+                  | View Details 
+                  i.fa.fa-arrow-circle-right
+        |                     
+        .col-lg-4
+          .panel.panel-red
+            .panel-heading
+              h3.panel-title
+                i.fa.fa-long-arrow-right
+                |  Line Graph Example with Tooltips
+            |                             
+            .panel-body
+              #morris-line-chart
+              |                                 
+              .text-right
+                a(href='#')
+                  | View Details 
+                  i.fa.fa-arrow-circle-right
+        |                     
+        .col-lg-4
+          .panel.panel-primary
+            .panel-heading
+              h3.panel-title
+                i.fa.fa-long-arrow-right
+                |  Bar Graph Example
+            |                             
+            .panel-body
+              #morris-bar-chart
+              |                                 
+              .text-right
+                a(href='#')
+                  | View Details 
+                  i.fa.fa-arrow-circle-right
+
+block footer
+  // Flot Charts JavaScript
+  //if lte IE 8
+    script(src='../public/js/excanvas.min.js')
+  |     
+  script(src='../public/js/plugins/flot/jquery.flot.js')
+  |     
+  script(src='../public/js/plugins/flot/jquery.flot.tooltip.min.js')
+  |     
+  script(src='../public/js/plugins/flot/jquery.flot.resize.js')
+  |     
+  script(src='../public/js/plugins/flot/jquery.flot.pie.js')
+  |     
+  script(src='../public/js/plugins/flot/flot-data.js')
