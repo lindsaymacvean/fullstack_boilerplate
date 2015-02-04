@@ -35,7 +35,7 @@ module.exports = function(app, models, io, operations) {
 	templates.route('/dashboard/:template')
 		.get(function(req, res, next) {
 			var bool;
-			fs.exists(views+'/templates/dashboard/'+req.params.template+'.jade',
+			fs.exists(views+'/templates/dashboard/'+req.params.template.toLowerCase()+'.jade',
 				function (exists) {
 					if(!exists) {
 						res.statusCode = 404;
@@ -60,7 +60,7 @@ module.exports = function(app, models, io, operations) {
 	app.route('/:template')
 		.get(function(req, res, next) {
 			var bool; 
-			fs.exists(views+'/'+req.params.template+'.jade',
+			fs.exists(views+'/'+req.params.template.toLowerCase()+'.jade',
 				function (exists) {
 					if(!exists) {
 						console.log(exists);
