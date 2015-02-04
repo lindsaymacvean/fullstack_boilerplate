@@ -12,6 +12,7 @@ Make sure to have installed:
 ``` 
 npm install && bower install
 foreman start
+grunt bowercopy
 ```
 
 ## Structure

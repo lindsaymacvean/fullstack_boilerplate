@@ -33,6 +33,7 @@ var routes = require('./routes')(app, models, io, operations);
 
 //Fire it up
 var port = process.env.PORT || config.port;
+
 http.listen(port, function() {
 	console.log('Started on port '+port);
 	//Start any operations that need to wait for the server to start

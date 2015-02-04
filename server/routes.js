@@ -34,23 +34,24 @@ module.exports = function(app, models, io, operations) {
 
 	templates.route('/dashboard/:template')
 		.get(function(req, res, next) {
+			var template = req.params.template.toLowerCase()
 			var bool;
-			fs.exists(views+'/templates/dashboard/'+req.params.template.toLowerCase()+'.jade',
+			fs.exists(views+'/templates/dashboard/'+template+'.jade',
 				function (exists) {
 					if(!exists) {
 						res.statusCode = 404;
 						res.render('404', {title:'404: File Not Found'});
-						return next();
+						return;
 					}
-					res.render('templates/dashboard/'+req.params.template, {title:req.params.template});
-					return next();
+					res.render('templates/dashboard/'+template, {title:template});
+					return;
 				});
 		});
 
 	app.use('/templates', templates);
 
 	//main views handler
-	//IMPORTANT: because of the catchalls specific routes should be placed
+	//IMPORTANT: because of the catchalls, specific routes should be placed
 	//above this line
 	app.route('/')
 		.get(function(req,res) {
@@ -59,17 +60,18 @@ module.exports = function(app, models, io, operations) {
 
 	app.route('/:template')
 		.get(function(req, res, next) {
+			var template = req.params.template.toLowerCase()
 			var bool; 
-			fs.exists(views+'/'+req.params.template.toLowerCase()+'.jade',
+			fs.exists(views+'/'+template+'.jade',
 				function (exists) {
 					if(!exists) {
 						console.log(exists);
 						res.statusCode = 404;
 						res.render('404', {title:'404: File Not Found'});
-						return next();
+						return;
 					}
-					res.render(req.params.template, {title:req.params.template});
-					return next();
+					res.render(template, {title:template});
+					return;
 					
 				});
 		});
