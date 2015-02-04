@@ -20,9 +20,38 @@ module.exports = function(app, models, io, operations) {
 	app.use('/', express.static(__dirname+'/../client/views'));
 	app.use('/public', express.static(__dirname+'/../client/public'));
 	app.set('views', __dirname+'/../client/views');
+	//Set views directory as a var for fs file checking
 	var views = app.locals.settings.views;
-	
+
+	//Dashboard template
+	var templates = express.Router();
+
+	templates.route('/dashboard')
+		.get(function(req, res, next) {
+			res.render('templates/dashboard/home', {title:'home'});
+			next();
+		});
+
+	templates.route('/dashboard/:template')
+		.get(function(req, res, next) {
+			var bool;
+			fs.exists(views+'/templates/dashboard/'+req.params.template+'.jade',
+				function (exists) {
+					if(!exists) {
+						res.statusCode = 404;
+						res.render('404', {title:'404: File Not Found'});
+						return next();
+					}
+					res.render('templates/dashboard/'+req.params.template, {title:req.params.template});
+					return next();
+				});
+		});
+
+	app.use('/templates', templates);
+
 	//main views handler
+	//IMPORTANT: because of the catchalls specific routes should be placed
+	//above this line
 	app.route('/')
 		.get(function(req,res) {
 			res.render('home', {title:'home'});
@@ -31,37 +60,17 @@ module.exports = function(app, models, io, operations) {
 	app.route('/:template')
 		.get(function(req, res, next) {
 			var bool; 
-			fs.exists('/views/'+req.params.template,
+			fs.exists(views+'/'+req.params.template+'.jade',
 				function (exists) {
 					if(!exists) {
-						app.render(req.params.template, {title:req.params.template});
+						console.log(exists);
+						res.statusCode = 404;
+						res.render('404', {title:'404: File Not Found'});
 						return next();
 					}
-					res.statusCode = 404;
-					res.render('404', {title:'404: File Not Found'});
-				});
-		});
-
-	//Dashboard template
-	app.route('/template/')
-		.get(function(req, res) {
-			res.render('/template/home', {title:req.params.template});
-		});
-
-	app.route('/template/:template')
-		.get(function(req, res, next) {
-			var bool; 
-			fs.exists(views+'/../template/'+req.params.template,
-				function (exists) {
-					console.log(views+'/../template/'+req.params.template);
-					console.log(exists);
-					if(!exists) {
-						res.render('/template/'+req.params.template, {title:req.params.template});
-						return next();e
-					}
-					res.statusCode = 404;
-					res.render('404', {title:'404: File Not Found'});
+					res.render(req.params.template, {title:req.params.template});
 					return next();
+					
 				});
 		});
 
@@ -69,7 +78,7 @@ module.exports = function(app, models, io, operations) {
 	require('./views/api/')(app, models, io);
 
 	//Set up 404
-	app.route('*')
+	app.route('/*')
 		.get(function (req, res, next) {
 			var err = new Error();
 			err.status = 404;
