@@ -85,7 +85,7 @@ module.exports = function(grunt) {
 		setTimeout(function () {
 			grunt.log.writeln('Done waiting!');
 			done();
-		}, 1500);
+		}, 200);
 	});
 
 	grunt.registerTask('server', function () {

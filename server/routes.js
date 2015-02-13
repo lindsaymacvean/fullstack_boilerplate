@@ -1,8 +1,7 @@
+'use strict';
 
-var favicon = require('serve-favicon');
-var methodOverride = require('method-override');
 var jade = require('jade');
-var bodyParser = require('body-parser');
+
 var express = require('express');
 var fs = require('fs');
 
@@ -11,10 +10,7 @@ module.exports = function(app, models, io, operations) {
 	app.set('view engine', 'jade');
 
 	//Set up middleware
-	app.use(favicon(__dirname+'/../client/public/imgs/favicon.ico'));
-	app.use(bodyParser.urlencoded({extended:true}));
-	app.use(bodyParser.json());
-	app.use(methodOverride());
+	require('./config/express')(app);
 
 	//set the client directory for client side views
 	app.use('/', express.static(__dirname+'/../client/views'));
