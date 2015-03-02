@@ -9,12 +9,12 @@ var config = require('./config/environment');
 var app = express();
 var http = require('http').Server(app);
 //Set up socket.io server & export as an app.publicMethod
-var io = module.exports.io = require('socket.io')(http);
+var io = require('socket.io')(http);
 //Time Formatter exported so Jade can access
 app.locals.moment = require('moment');
 
 //Set up database using mongoose
-var models = module.exports.models = require('./config/mongoose');
+var models = require('./config/mongoose');
 
 //Setup Operations (formerly controllers)
 var operations = require('./controller')(app, models, io);
