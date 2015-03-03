@@ -16,7 +16,40 @@ module.exports = function (app) {
 	app.use(methodOverride());
 
 	if('development'===env) {
+		//Logging tools
+		var winston = require('winston');
+		winston.emitErrs = true;
+		var logger = new winston.Logger({
+			transports: [
+				new winston.transports.File({
+		            level: 'info',
+		            filename: './server/all-logs.log',
+		            handleExceptions: true,
+		            json: true,
+		            maxsize: 5242880, //5MB
+		            maxFiles: 5,
+		            colorize: false
+		        }),	
+		        //*/
+				new winston.transports.Console({
+					level:'debug',
+					//handleExceptions: true,
+					json:false,
+					colorize:true
+				}),
+			],
+			exitOnError:false
+		});
+		logger.stream = { 
+			write: function (message, encoding) {
+				logger.info(message);
+			}
+		};
+		var morgan = require('morgan');
+		app.use(morgan({'stream': logger.stream}));
+		//Live reload inject client script
 		app.use(require('connect-livereload')());
 		app.use(errorHandler()); //Error Handler has to be last
+		
 	}
 };

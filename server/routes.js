@@ -1,7 +1,6 @@
 'use strict';
 
 var jade = require('jade');
-
 var express = require('express');
 var fs = require('fs');
 
@@ -61,7 +60,6 @@ module.exports = function(app, models, io, operations) {
 			fs.exists(views+'/'+template+'.jade',
 				function (exists) {
 					if(!exists) {
-						console.log(exists);
 						res.statusCode = 404;
 						res.render('404', {title:'404: File Not Found'});
 						return;
@@ -76,22 +74,27 @@ module.exports = function(app, models, io, operations) {
 	require('./views/api/')(app, models, io);
 
 	//Set up 404
-	app.route('/*')
+	app.route('*')
 		.get(function (req, res, next) {
-			var err = new Error();
-			err.status = 404;
-			next(err);
-		});
+			res.status(404);
+			if (req.accepts('html')) {
+				res.render('404', 
+					{
+						title:'404: File Not Found',
+						url: req.url
+				});
+				return;
+			}
 
-	app.use(function (err, req, res, next) {
-		if(err.status === 404) {
-			url = req.url;
-			res.render('404', 
-				{
-					title:'404: File Not Found',
-					url: url
+			// respond with json
+			  if (req.accepts('json')) {
+			    res.send({ error: 'Not found' });
+			    return;
+			  }
+
+			  // default to plain-text. send()
+			  res.type('txt').send('Not found');
 			});
-		}
-	});
+	//*/
 
 };

@@ -48,7 +48,8 @@ module.exports = function(grunt) {
 			},
 			express: {
 				files: [
-					'server/**/**'
+					'server/**/**',
+					'!**/*.log'
 				],
 				tasks: ['express:dev', 'wait'],
 				options: {
