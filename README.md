@@ -1,11 +1,9 @@
 WARNING THIS REPO IS UNDER DEVELOPMENT AND UNLIKELY TO MAKE MUCH SENSE
 
 # Fullstack web app Boilerplate
-Express fullstack web app boilerplate
-
 This codebase is designed with one very specific purpose in mind. Imagine you have an idea, you don't know if it would work very well but you just want to show your friends. Who know's, it might even be good enough to make a business. So you just want it to run and handle maybe a few thousand customers. But you don't want it to be impossible to improve and scale if you manage to get that far. This is my attempt at a stack for that scenario.
 
-"I have never seen a company die because it didn't scale fast enough" - Guy Kawasaki
+>"I have never seen a company die because it didn't scale fast enough" - Guy Kawasaki
 
 ## Strategic Goals
 * It just needs to be good enough.
