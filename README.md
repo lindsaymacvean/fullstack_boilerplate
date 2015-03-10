@@ -11,7 +11,6 @@ This codebase is designed with one very specific purpose in mind. Imagine you ha
 * Good enough to show your friends and maybe some investors.
 * Good enough to handle up to ~10,000 concurrent connections without falling over
 * Should be able to run on cheap/free PaaS 
-* Should incorporate best practice at a fundamental level.
 * Arranged so that a small team can get up to speed quickly
 * Each part/module should require minimum skill-set to maintain.
 
@@ -22,6 +21,7 @@ This codebase is designed with one very specific purpose in mind. Imagine you ha
 * No templates like Jade - just pure HTML5 for simplicity.
 * Micro-services connected with messaging through Redis.
 * Should be easily transportable to new developer environments (5 min install)
+* Should incorporate any best practices that will make it easier and quicker to ship.
 
 ## Practices 
 * Git(hub) Version Control - because who doesn't with web apps.
