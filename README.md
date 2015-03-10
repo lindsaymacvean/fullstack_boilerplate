@@ -1,3 +1,5 @@
+WARNING THIS REPO IS UNDER DEVELOPMENT AND UNLIKELY TO MAKE MUCH SENSE
+
 # Fullstack web app Boilerplate
 Express fullstack web app boilerplate
 
