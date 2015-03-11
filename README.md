@@ -66,23 +66,23 @@ grunt server
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-css  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-font-awesome  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-imgs  
-		|-js  
-	|-views    
-		|-includes (partials)  
-		|-templates (to keep backups of templates)  
-		|-layout.jade  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-js  
+&nbsp;&nbsp;&nbsp;&nbsp;|-views    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-includes (partials)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-templates (to keep backups of templates)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-layout.jade  
 |-dist (compiled html Single Page App)  
 |-node_modules (.gitignore)  
 |-server  
-	|-config    
-	|-models    
-	|-operations   
-	|-views   
-		|-api   
-		|-web   
-	|-app.js (main file)   
-	|-controller.js (Parent for all operations)   
-	|-routes.js (Parent for all web/api routes)   
+&nbsp;&nbsp;&nbsp;&nbsp;|-config    
+&nbsp;&nbsp;&nbsp;&nbsp;|-models    
+&nbsp;&nbsp;&nbsp;&nbsp;|-operations   
+&nbsp;&nbsp;&nbsp;&nbsp;|-views   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-api   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-web   
+&nbsp;&nbsp;&nbsp;&nbsp;|-app.js (main file)   
+&nbsp;&nbsp;&nbsp;&nbsp;|-controller.js (Parent for all operations)   
+&nbsp;&nbsp;&nbsp;&nbsp;|-routes.js (Parent for all web/api routes)   
 |-.gitignore (for ignoring files from git processes)   
 |-Gruntfile.js (task manager for compiling and livereload)   
 |-License (Currently MIT)   
