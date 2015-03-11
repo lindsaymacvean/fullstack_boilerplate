@@ -60,39 +60,36 @@ grunt server
 ```
 
 ## Directory Structure
-|-bower_components (.gitignore, files compiled from here to dist)
-
-|-client (uncompiled SPA files, should be ignored for production)
-
-	|-public
-	
-		|-css
-		|-font-awesome
-		|-imgs
-		|-js
-	|-views
-		|-includes (partials)
-		|-templates (to keep backups of templates)
-		|-layout.jade
-|-dist (compiled html Single Page App)
-|-node_modules (.gitignore)
-|-server
-	|-config
-	|-models
-	|-operations
-	|-views
-		|-api
-		|-web
-	|-app.js (main file)
-	|-controller.js (Parent for all operations)
-	|-routes.js (Parent for all web/api routes)
-|-.gitignore (for ignoring files from git processes)
-|-Gruntfile.js (task manager for compiling and livereload)
-|-License (Currently MIT)
-|-Procfile (For Heroku launch)
-|-README.md (this file)
-|-bower.json (for SPA precompiled components version control)
-|-package.json ()
+|-bower_components (.gitignore, files compiled from here to dist)  
+|-client (uncompiled SPA files, should be ignored for production)  
+	|-public  
+		|-css  
+		|-font-awesome  
+		|-imgs  
+		|-js  
+	|-views    
+		|-includes (partials)  
+		|-templates (to keep backups of templates)  
+		|-layout.jade  
+|-dist (compiled html Single Page App)  
+|-node_modules (.gitignore)  
+|-server  
+	|-config    
+	|-models    
+	|-operations   
+	|-views   
+		|-api   
+		|-web   
+	|-app.js (main file)   
+	|-controller.js (Parent for all operations)   
+	|-routes.js (Parent for all web/api routes)   
+|-.gitignore (for ignoring files from git processes)   
+|-Gruntfile.js (task manager for compiling and livereload)   
+|-License (Currently MIT)   
+|-Procfile (For Heroku launch)   
+|-README.md (this file)   
+|-bower.json (for SPA precompiled components version control)   
+|-package.json (node version control for modules)   
 
 **Using a MOVE structure**
 
