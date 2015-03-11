@@ -40,12 +40,12 @@ This codebase is designed with one very specific purpose in mind. Imagine you ha
 * Pulic front end and private frontend with boilerplate dashboard capabilities
 
 ## Architecture
-Based on this here is a current diagram showing the features in relation to one another.
+Based on this here is a current diagram showing the features in relation to one another:
 
 ![](https://docs.google.com/drawings/d/1tSR0bjQJglcT-38VVY8FT1DqkZZMFQ57_A02aRPiqEk/pub?w=961&h=581)
 
 
-And an event diagram for authentication and access of private content
+And an event diagram for authentication and access of private content:
 
 
 ![](https://docs.google.com/drawings/d/1ehHzQOMKdGw2ARZzDgZufGvjqbyw9RFU8Q0K3L6NMU4/pub?w=960&h=720)
@@ -97,15 +97,14 @@ grunt server
 |-bower.json (for SPA precompiled components version control)   
 |-package.json (node version control for modules)   
 
+---
+
 **Using a MOVE structure**
 
-Models - Typical
-
-Operations - Handling all controller like behaviour with the DB etc
-
-Views - Classic views are in the ../client directory. The server directory handles APIs and other http routing
-
-Events - Bubbling up from the client side through the routes and endpoints and to the operations.
+*Models* - Typical
+*Operations* - Handling all controller like behaviour with the DB etc
+*Views* - Classic views are in the ../client directory. The server directory handles APIs and other http routing
+*Events* - Bubbling up from the client side through the routes and endpoints and to the operations.
 
 ## To Dos
 Set up passport.js security
