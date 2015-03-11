@@ -62,10 +62,10 @@ grunt server
 ## Directory Structure
 |-bower_components (.gitignore, files compiled from here to dist)  
 |-client (uncompiled SPA files, should be ignored for production)  
-	|-public  
-		|-css  
-		|-font-awesome  
-		|-imgs  
+&nbsp;&nbsp;&nbsp;&nbsp;|-public  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-css  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-font-awesome  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-imgs  
 		|-js  
 	|-views    
 		|-includes (partials)  
