@@ -24,10 +24,10 @@ This codebase is designed with one very specific purpose in mind. Imagine you ha
 * Architect around Micro-services connected with queues.
 * Should be easily transportable to new developer environments (5 min install)
 * Should incorporate any best practices that will make it easier and quicker to ship.
-* Best practices can be identified by:
---*large community
---*battle tested solutions
---*understanding of limits e.g. socket.io great for lower concurrency higher message rate
+* Best practices can be identified by:  
+..*large community
+..*battle tested solutions
+..*understanding of limits e.g. socket.io great for lower concurrency higher message rate
 
 ## Practices 
 * Git(hub) Version Control - because who doesn't with web apps.
