@@ -30,6 +30,7 @@ This codebase is designed with one very specific purpose in mind. Imagine you ha
 * SPA using Angular - because its seems to be less learning than ember.
 * Grunt - because it kicks ass, and I can't see a viable alternative.
 * RESTFUL API - because it needs to be repeatable to several workers.
+* API works for web/mobile/3rd party apps.
 * Redis - because we need to have a central session store and queue system.
 * Heroku - because it is easily accessible from CLI
 * Capable of being transferred to S3/EC2 with minimal fuss
@@ -37,11 +38,12 @@ This codebase is designed with one very specific purpose in mind. Imagine you ha
 * No Flash Messages because that can be done with ajax
 * Logging everything in txt files so that it can be analyzed later
 * Pulic front end and private frontend with boilerplate dashboard capabilities
+* 
 
 ## Architecture
 Based on this here is a current diagram showing the features in relation to one another.
 
-![](http://)
+![](https://docs.google.com/drawings/d/1tSR0bjQJglcT-38VVY8FT1DqkZZMFQ57_A02aRPiqEk/pub?w=961&h=581)
 
 ## How to install
 Make sure to have installed:
