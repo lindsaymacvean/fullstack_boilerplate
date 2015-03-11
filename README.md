@@ -99,12 +99,14 @@ grunt server
 
 ---
 
-**Using a MOVE structure**
+**Using a M.O.V.E. structure**
 
-*Models* - Typical
-*Operations* - Handling all controller like behaviour with the DB etc
-*Views* - Classic views are in the ../client directory. The server directory handles APIs and other http routing
-*Events* - Bubbling up from the client side through the routes and endpoints and to the operations.
+*Models* - Typical  database abstraction  
+*Operations* - Modular processes capable of being moved to independent workers    
+*Views* - Classic views are in the ../client directory. The server directory handles APIs and other http routing  
+*Events* - Bubbling up from the client side through the routes and endpoints to the operations.  
+[*courtesy of Conrad Irwin*](https://cirw.in/blog/time-to-move-on)
+##  
 
 ## To Dos
 Set up passport.js security
