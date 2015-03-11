@@ -61,8 +61,11 @@ grunt server
 
 ## Directory Structure
 |-bower_components (.gitignore, files compiled from here to dist)
+
 |-client (uncompiled SPA files, should be ignored for production)
+
 	|-public
+	
 		|-css
 		|-font-awesome
 		|-imgs
