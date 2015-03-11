@@ -18,8 +18,8 @@ This codebase is designed with one very specific purpose in mind. Imagine you ha
 * KISS - leave it if can be done by a much more qualified person in 1 year.
 * Easily Scalable - that is to say you can run more workers and it handles more load.
 * Complete testing frameworks and livereloading to speed up development
-* No templates like Jade - just pure HTML5 for simplicity.
-* Micro-services connected with messaging through Redis.
+* No runtime compiling of templates like Jade - just pure HTML5 for simplicity.
+* Micro-services connected with queues.
 * Should be easily transportable to new developer environments (5 min install)
 * Should incorporate any best practices that will make it easier and quicker to ship.
 
@@ -38,12 +38,18 @@ This codebase is designed with one very specific purpose in mind. Imagine you ha
 * No Flash Messages because that can be done with ajax
 * Logging everything in txt files so that it can be analyzed later
 * Pulic front end and private frontend with boilerplate dashboard capabilities
-* 
 
 ## Architecture
 Based on this here is a current diagram showing the features in relation to one another.
 
 ![](https://docs.google.com/drawings/d/1tSR0bjQJglcT-38VVY8FT1DqkZZMFQ57_A02aRPiqEk/pub?w=961&h=581)
+
+
+And an event diagram for authentication and access of private content
+
+
+![](https://docs.google.com/drawings/d/1ehHzQOMKdGw2ARZzDgZufGvjqbyw9RFU8Q0K3L6NMU4/pub?w=960&h=720)
+
 
 ## How to install
 Make sure to have installed:
@@ -70,16 +76,16 @@ grunt server
 &nbsp;&nbsp;&nbsp;&nbsp;|-views    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-includes (partials)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-templates (to keep backups of templates)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-layout.jade  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-layout.jade (compiled in HTML)  
 |-dist (compiled html Single Page App)  
 |-node_modules (.gitignore)  
-|-server  
-&nbsp;&nbsp;&nbsp;&nbsp;|-config    
-&nbsp;&nbsp;&nbsp;&nbsp;|-models    
-&nbsp;&nbsp;&nbsp;&nbsp;|-operations   
-&nbsp;&nbsp;&nbsp;&nbsp;|-views   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-api   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-web   
+|-server (for all node scripts)  
+&nbsp;&nbsp;&nbsp;&nbsp;|-config (for env vars etc)     
+&nbsp;&nbsp;&nbsp;&nbsp;|-models (to act as a databse abstraction layer)  
+&nbsp;&nbsp;&nbsp;&nbsp;|-operations (Capable of modularity into individual worker)  
+&nbsp;&nbsp;&nbsp;&nbsp;|-views (really routes but using views because of MOVE see below...)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-api (for CRUD operations)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-web  (for routes to static content)  
 &nbsp;&nbsp;&nbsp;&nbsp;|-app.js (main file)   
 &nbsp;&nbsp;&nbsp;&nbsp;|-controller.js (Parent for all operations)   
 &nbsp;&nbsp;&nbsp;&nbsp;|-routes.js (Parent for all web/api routes)   
