@@ -55,16 +55,41 @@ Make sure to have installed:
 
 ``` 
 npm install && bower install
-foreman start
 grunt bowercopy
+grunt server
 ```
 
 ## Directory Structure
-/dist compiled files using grunt
-
-/client holds all client side jade templates
-
-/server holds all server side node files
+|-bower_components (.gitignore, files compiled from here to dist)
+|-client (uncompiled SPA files, should be ignored for production)
+	|-public
+		|-css
+		|-font-awesome
+		|-imgs
+		|-js
+	|-views
+		|-includes (partials)
+		|-templates (to keep backups of templates)
+		|-layout.jade
+|-dist (compiled html Single Page App)
+|-node_modules (.gitignore)
+|-server
+	|-config
+	|-models
+	|-operations
+	|-views
+		|-api
+		|-web
+	|-app.js (main file)
+	|-controller.js (Parent for all operations)
+	|-routes.js (Parent for all web/api routes)
+|-.gitignore (for ignoring files from git processes)
+|-Gruntfile.js (task manager for compiling and livereload)
+|-License (Currently MIT)
+|-Procfile (For Heroku launch)
+|-README.md (this file)
+|-bower.json (for SPA precompiled components version control)
+|-package.json ()
 
 **Using a MOVE structure**
 
@@ -72,14 +97,15 @@ Models - Typical
 
 Operations - Handling all controller like behaviour with the DB etc
 
-Views - Classic views are in the ../client directory. The server directory handles APIs
+Views - Classic views are in the ../client directory. The server directory handles APIs and other http routing
 
 Events - Bubbling up from the client side through the routes and endpoints and to the operations.
 
 ## To Dos
-Setup io emitting for default operations
-
-Grunt compiling to /dist
+Set up passport.js security
+Set up queuing system for operations
+Setup 3rd party standard integrations
+Grunt compiling jade etc to /dist
 
 ## License
 MIT
