@@ -113,13 +113,16 @@ grunt server
 [*Attribution to Conrad Irwin*](https://cirw.in/blog/time-to-move-on)
 
 ## Change Log and reasoning
-
-* Proposed Redis as session store - because faster than mongodb and generally used for this purpose.
+* Chose Angular over ember and backbone (still intend to use lodash)
+* Proposed Redis as session store - because faster than mongodb and (generally used for semi-persistent data.)[http://stackoverflow.com/questions/10696463/mongodb-with-redis] but does not easily handle json objects and only (semi-persistent)[https://muut.com/blog/technology/redis-as-primary-datastore-wtf.html] not ACID (AP in Diagram below).
 * Chose passport.js as battle tested authentication framework
+* Multiple 
+* Chose socket.io over alternatives - >100 concurrent users 1message/second 60,000 messagages/minute, generally works great for lower user concurrency and higher message rate i.e. Games/Chat
 * Used live-reload instead of nodemon - because this was the model used by fullstack-angular
 * Chose Grunt as task runner (doesn't seem to be great alternative)
+* Chose MongoDB for persistent data - because in a dynamic environment we don't have a clear structure or relations between data. We can swap in a sql database at a later stage if necessary. Mongo is faster at ~3x faster at write, but be careful of multiple object transactions or any relational data. !()[http://qph.is.quoracdn.net/main-qimg-f8e3143e5146acfb55f6cbdf0b23ba57?convert_to_webp=true]
 * Chose Express as major node framework (battle tested, and good community)
-* Chose node over ruby, python, php. Because of high concurrency out of the box (can handle >~10,000 concurrent customers), also makes seperating of the client and server code easier, and realtime socket capabilities with socket.io. Finally my skillset is in javascript and easier to higher a javascript developer than other languages.
+* Chose node over ruby, python, php. Because of high concurrency out of the box (can handle >~10,000 concurrent customers), also makes seperating of the client and server code easier, and realtime socket capabilities with socket.io. Finally my skillset is in javascript and easier to hire a javascript developer than other languages.
 
 ## To Dos
 * Set up passport.js security
