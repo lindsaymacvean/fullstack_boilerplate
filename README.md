@@ -13,23 +13,31 @@ This codebase is designed with one very specific purpose in mind. Imagine you ha
 * Should be able to run on cheap/free PaaS 
 * Arranged so that a small team can get up to speed quickly
 * Each part/module should require minimum skill-set to maintain.
+* This is an exemplar which can also be compared with koans
 
 ## Principles and Constraints
 * KISS - leave it if can be done by a much more qualified person in 1 year.
 * Expect to have to remove or modify every part of the architecture at some point.
+* [8 Fallacies of Distributed Computing](https://blogs.oracle.com/jag/resource/Fallacies.html)
+* [The Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy)
 * Expect an unstable environment where any particular service may crash.
 * Easily Scalable - that is to say you can run more workers and it handles more load.
-* Complete testing frameworks and livereloading to speed up development
-* No runtime compiling of templates like Jade - just pure HTML5 for simplicity.
-* Architect around Micro-services connected with queues.
-* Should be easily transportable to new developer environments (5 min install)
+* Should be easily transportable to new developer environments/OSs (5 min install)
+* Tight cohesion, Loose Coupling
 * Should incorporate any best practices that will make it easier and quicker to ship.
+* Adapt or die
 * Best practices can be identified by:
     * large community
     * battle tested solutions
     * understanding of limits e.g. socket.io great for lower concurrency higher message rate
+    * within a small community always stick to a consensus coding rules (no odd man out)
 
 ## Practices 
+* Tabs not spaces
+* Naming - clear, concise, accurate, don't repeat context
+* Architect around Micro-services connected with queues.
+* No runtime compiling of templates like Jade - just pure Single Page HTML5 for simplicity.
+* Complete testing frameworks and livereloading to speed up development
 * Git(hub) Version Control - because who doesn't with web apps.
 * MEAN stack - because javascript is ubiquitous and node is designed for concurrency.
 * Mongo - because we can always implement a relational database later.
